@@ -18,25 +18,7 @@ document.querySelector(".control-buttons span") .onclick= function (){
 
 
     // ################## timer ###########
-    // let timeleft = 15;
-
-    // let downloadTimer = setInterval(function function1(){
-    // document.getElementById("countdown").innerHTML = timeleft + 
-    // "&nbsp"+"seconds remaining";
-
-    // timeleft -= 1;
-    // if(timeleft <= 0){
-    //     clearInterval(downloadTimer);
-    //     document.getElementById("countdown").innerHTML = alert("Game over")
-    // }
-    //  if (timeleft === 0){
-    //      alert("Game Over");
-    //      clearInterval(timeleft);
-    //  }
-    // }, 1000);
-
-    // console.log(countdown);
-
+    
     function timer(){
 let counter =20;
 setInterval(() => {
@@ -51,6 +33,7 @@ setInterval(() => {
     }
 }, 1000);
     }
+
     // remove splash screen
     document.querySelector(".control-buttons ").remove();
 }
