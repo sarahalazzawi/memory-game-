@@ -1,6 +1,5 @@
 "use strict";
 
-
 // 11111111111111
 
 document.querySelector(".control-buttons span") .onclick= function (){
