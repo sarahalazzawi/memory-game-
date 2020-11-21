@@ -1,21 +1,10 @@
 "use strict";
-function startTimer() {
-    var secs = 0;
-    let min =0;
-        var id = setInterval(function(){ 
-            secs++; console.log(secs);
-min++;
 
-          if(secs> 5){
-            clearInterval(id);
-            alert('Game Over  Total Time: ' + secs + ' seconds');
-           }
-           document.querySelector(' label minutes').innerHTML=min;
-           document.querySelector(' label seconds').innerHTML=secs;
-        }, 1000);
-    };
+
 // 11111111111111
+
 document.querySelector(".control-buttons span") .onclick= function (){
+    timer();
     let yourName=prompt("whats your Name? ");
     console.log(yourName);
     if (yourName == null ||yourName == ""){
@@ -25,6 +14,42 @@ document.querySelector(".control-buttons span") .onclick= function (){
         // set name to your name
         document.querySelector('.name span').innerHTML = yourName;
   
+    }
+
+
+    // ################## timer ###########
+    // let timeleft = 15;
+
+    // let downloadTimer = setInterval(function function1(){
+    // document.getElementById("countdown").innerHTML = timeleft + 
+    // "&nbsp"+"seconds remaining";
+
+    // timeleft -= 1;
+    // if(timeleft <= 0){
+    //     clearInterval(downloadTimer);
+    //     document.getElementById("countdown").innerHTML = alert("Game over")
+    // }
+    //  if (timeleft === 0){
+    //      alert("Game Over");
+    //      clearInterval(timeleft);
+    //  }
+    // }, 1000);
+
+    // console.log(countdown);
+
+    function timer(){
+let counter =20;
+setInterval(() => {
+    counter--;
+    if(counter >= 0){
+        let span=document.getElementById("countdown");
+        span.innerHTML=counter +"seconds remaining";
+    }
+    if(counter === 0){
+        alert(`Game Over ${yourName}`  );
+        clearInterval(counter)
+    }
+}, 1000);
     }
     // remove splash screen
     document.querySelector(".control-buttons ").remove();
@@ -67,6 +92,7 @@ blocks.forEach((block,index) => {
 
 // flip Block function 
 function flipBlock(selectedBlock){
+
 // Add  class is-flipped 
     selectedBlock.classList.add('is-flipped');
 
@@ -112,7 +138,7 @@ function checkMatchedBlocks(firstBlock,secondBlock){
     document.getElementById('success').play();
 }else{
 
-    triesElement.innerHTML =  parseInt(triesElement.innerHTML) +1;
+    triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
     console.log("helllo",triesElement);  
 setTimeout(() => {
     firstBlock.classList.remove('is-flipped');
@@ -121,8 +147,6 @@ setTimeout(() => {
  document.getElementById('fail').play();
 }
 }
-
-
 
 
 // 3333333333333333333333333333333
@@ -148,5 +172,6 @@ function shuffle(array){
     }
     return array;
 } ;
+
 
 
