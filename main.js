@@ -1,19 +1,5 @@
 "use strict";
-function startTimer() {
-    var secs = 0;
-    let min =0;
-        var id = setInterval(function(){ 
-            secs++; console.log(secs);
-min++;
 
-          if(secs> 5){
-            clearInterval(id);
-            alert('Game Over  Total Time: ' + secs + ' seconds');
-           }
-           document.querySelector(' label minutes').innerHTML=min;
-           document.querySelector(' label seconds').innerHTML=secs;
-        }, 1000);
-    };
 // 11111111111111
 document.querySelector(".control-buttons span") .onclick= function (){
     let yourName=prompt("whats your Name? ");
